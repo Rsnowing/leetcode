@@ -1,8 +1,9 @@
 ## 680 [验证回文字符串](https://leetcode-cn.com/problems/valid-palindrome-ii/)
+2020-05-21
 ### 思路
 左右指针遍历，当左右指向不相等时，删除左或删除右
 ### code
-```
+```js
 /**
  * @param {string} s
  * @return {boolean}

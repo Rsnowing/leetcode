@@ -1,3 +1,5 @@
 * [首页]()
 * [string](/string/easy)
-    * [简单](/string/easy)
+    * [680-](/string/easy)
+* [number](/number/easy)
+    * [202-](/number/easy)
