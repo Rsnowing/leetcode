@@ -3,3 +3,5 @@
     * [680-](/string/easy)
 * [number](/number/easy)
     * [202-](/number/easy)
+* [math](/math/easy)
+    * [528-](/math/easy)

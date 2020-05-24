@@ -1,3 +1,4 @@
+# 与字符串相关的简单题
 ## 680 [验证回文字符串](https://leetcode-cn.com/problems/valid-palindrome-ii/)
 2020-05-21
 ### 思路
