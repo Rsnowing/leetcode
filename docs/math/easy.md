@@ -24,3 +24,25 @@ var generate = function(numRows) {
     return result
 };
 ```
+## 119 [杨辉三角-二](https://leetcode-cn.com/problems/pascals-triangle-ii/)
+### 思路
+膜拜大神做法，我还是用的上一个做法
+### code
+```js
+/**
+ * @param {number} rowIndex
+ * @return {number[]}
+ */
+var getRow = function(rowIndex) {
+    if(rowIndex === 0) return [1]
+    let list = [1]
+    for(let i = 0; i < rowIndex ; i++) {
+        list.unshift(0)
+        for(let j = 0; j < i + 1 ;j++) {
+            list[j] = list[j] + list[j+1]
+        }
+    }
+
+    return list
+};
+```
