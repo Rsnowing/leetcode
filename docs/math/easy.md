@@ -46,3 +46,25 @@ var getRow = function(rowIndex) {
     return list
 };
 ```
+
+## 117 [Excel表列序号](https://leetcode-cn.com/problems/excel-sheet-column-number/)
+### 思路
+将26进制转为10进制
+### code
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var titleToNumber = function(s) {
+    const arr = s.split(''),
+        len = arr.length
+    return arr.reduce((acc, cur, index) => {
+        acc += (cur.charCodeAt() - 65 + 1) * Math.pow(26, len - index -1)
+        return acc
+    }, 0)
+
+};
+```
+
+> str.charCodeAt() 获取字符的ASCII码
