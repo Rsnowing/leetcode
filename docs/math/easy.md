@@ -66,5 +66,21 @@ var titleToNumber = function(s) {
 
 };
 ```
+### 比较快的解法
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var titleToNumber = function(s) {
+    var result = 0;
+    for (var i = 0; i < s.length; i++) {
+        var num = s[i].charCodeAt() - 64;
+        result = result * 26 + num
+    }
+    return result;
+};
+```
 
 > str.charCodeAt() 获取字符的ASCII码
+String.fromCharCode(num) 将ASCII码转为字符
