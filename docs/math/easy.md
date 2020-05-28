@@ -47,7 +47,7 @@ var getRow = function(rowIndex) {
 };
 ```
 
-## 117 [Excel表列序号](https://leetcode-cn.com/problems/excel-sheet-column-number/)
+## 171 [Excel表列序号](https://leetcode-cn.com/problems/excel-sheet-column-number/)
 ### 思路
 将26进制转为10进制
 ### code
