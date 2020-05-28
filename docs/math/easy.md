@@ -82,5 +82,5 @@ var titleToNumber = function(s) {
 };
 ```
 
-> str.charCodeAt() 获取字符的ASCII码
-String.fromCharCode(num) 将ASCII码转为字符
+> str.charCodeAt() 获取字符的ASCII码  
+String.fromCharCode(code) 将ASCII码转为字符
