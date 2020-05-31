@@ -84,3 +84,41 @@ var titleToNumber = function(s) {
 
 > str.charCodeAt() 获取字符的ASCII码  
 String.fromCharCode(code) 将ASCII码转为字符
+
+## [172阶乘后的零](https://leetcode-cn.com/problems/factorial-trailing-zeroes/)
+### 思路
+一开始我的想法就是获得到n的阶乘，然后由结果去计算得到0的个数。害还是太年轻啊，阶乘很容易就溢出了，不适用于此题的答案。看了很多优秀的回答，整理一下思路：
+尾0产生的条件：非0数乘以10会得到一个尾0。10 = 2 * 5 =》 非0数 * 2 * 5即可得到一个尾0。
+在任何阶乘中2的倍数总是大于5的倍数，因此只要去看5的倍数有多少个即可。
+有一些特殊的数字：
+25 = 5 * 5，可以化成2个5；
+125 = 5 * 5 * 5，可以化成3个5；.....以此类推
+```js
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var trailingZeroes = function(n) {
+    let count = 0
+    for (let i = 5; i <= n; i = i * 5) {
+        count += Math.floor(n / i)
+    }
+    return count
+};
+```
+
+```js
+var trailingZeroes = function(n) {
+    let count = 0
+    while(n >= 5) {
+        count += Math.floor(n / 5)
+        n = n / 5
+    }
+    return count
+};
+```
+
+
+
+
+
