@@ -4,4 +4,4 @@
 * [number](/number/easy)
     * [202-](/number/easy)
 * [math](/math/easy)
-    * [528-119-171](/math/easy)
+    * [528-119-171-172-231](/math/easy)
