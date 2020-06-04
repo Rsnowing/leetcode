@@ -5,3 +5,5 @@
     * [202-](/number/easy)
 * [math](/math/easy)
     * [528-119-171-172-231](/math/easy)
+* [动态规划](/动态规划/easy)
+    * [198](/动态规划/easy)
