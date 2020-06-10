@@ -82,3 +82,58 @@ var isUgly = function(num) {
     return true
 };
 ```
+
+## [204计数质数](https://leetcode-cn.com/problems/count-primes/)
+2020-06-10
+### 思路
+一看到题，我的第一想法，哇好简单，遍历判断质数完成，然后执行了超出时间限制！！
+```js
+// 脑回路简单的做法 =》 超出时间限制 不可取
+var countPrimes = function(n) {
+    if (n <= 2) return 0
+    let count = 1 // 2是最小质数 
+    n = n-1
+    while (n > 2) {
+        if (isPrimes(n)) {
+            count++
+        }
+        n--
+    }
+    return count
+};
+
+function isPrimes(num) {
+    let point = num % 2 === 0 ? num / 2 : (num + 1) / 2
+    while (point > 1) {
+        if (num % point === 0) {
+            return false
+        }
+        point--
+    }
+    return true
+}
+```
+看了大神们的解答，  奇怪的算法知识又增加了！
+### 厄拉多塞筛法
+[题解](https://leetcode-cn.com/problems/count-primes/solution/ji-shu-zhi-shu-bao-li-fa-ji-you-hua-shai-fa-ji-you/)  
+
+每计算一个数，都要把它的倍数去掉。到了n，数一下留下了几个数。
+```js
+var countPrimes = function(n) {
+    let arr = new Array(n + 1)
+    let count = 0
+    for (let i = 2; i < n; i++) {
+        if (!arr[i]) {
+            count++
+            // 从 i的2倍，3倍。。。
+            for (let j = 2 * i; j < n; j = j + i) {
+                arr[j] = true
+            }
+        }
+    }
+    return count
+}
+```
+> let n = 3
+n = n--   // n = 3
+n-- // n = 2
