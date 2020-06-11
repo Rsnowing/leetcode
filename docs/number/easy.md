@@ -1,5 +1,5 @@
 # 与number相关的简单题
-## 202 [快乐数](https://leetcode-cn.com/problems/happy-number/)
+## [202 快乐数](https://leetcode-cn.com/problems/happy-number/)
 2020-05-22
 ### 思路
 将平方和记录下来，若数组中出现了平方和，则表示出现循环，不可能快乐~！
@@ -134,6 +134,7 @@ var countPrimes = function(n) {
     return count
 }
 ```
-> let n = 3
-n = n--   // n = 3
-n-- // n = 2
+> let n = 3  
+n = n--   // n = 3  
+n-- // n =  2   
+ 
