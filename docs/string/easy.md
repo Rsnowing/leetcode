@@ -76,4 +76,38 @@ var isPalindrome = function(s) {
 2种解法都是打败19%的用户， 108ms执行完成，但是解法2在别人的提交记录中是50ms执行完成。。可能是受限于网速、机器性能吧
 > str.replace(/[^\d^\w]/g, ''), str.replace(/[^0-9a-zA-Z]/g, '') 替换除了字母数字之外的字符为空。  
 str.toLowerCase() 字符串转成小写  
-arr.join('') 将数组转成字符串 【不传参数则以逗号分隔】
+arr.join('') 将数组转成字符串 【不传参数则以逗号分隔】 
+
+## [205 同构字符串](https://leetcode-cn.com/problems/isomorphic-strings/)
+20200611
+### 思路
+* 使用map
+* 使用indexOf【我居然没有想到】
+### code
+```js
+// map做法
+var isIsomorphic = function(s, t) {
+    s = s.split('');
+    t = t.split('');
+    let sMap = {}, tMap = {};
+    for (let i = 0; i < s.length; i++) {
+        if ((!sMap[s[i]] && !tMap[t[i]]) || (sMap[s[i]] === tMap[t[i]])) {
+            sMap[s[i]] = i + 1;
+            tMap[t[i]] = i + 1;
+        } else {
+            return false;
+        }
+    }
+    return true;
+};
+// indexOf
+var isIsomorphic2 = function(s, t) {
+    for (let i = 0; i < s.length; i++) {
+        if(s.indexOf(s[i]) != t.indexOf(t[i])){
+            return false;
+        }
+    }
+    return true;
+}
+```
+> !a  当a = 0 , undefined 时都会被转为true
