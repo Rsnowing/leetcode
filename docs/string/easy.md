@@ -87,8 +87,8 @@ arr.join('') 将数组转成字符串 【不传参数则以逗号分隔】
 ```js
 // map做法
 var isIsomorphic = function(s, t) {
-    s = s.split('');
-    t = t.split('');
+    // s = s.split('');
+    // t = t.split('');
     let sMap = {}, tMap = {};
     for (let i = 0; i < s.length; i++) {
         if ((!sMap[s[i]] && !tMap[t[i]]) || (sMap[s[i]] === tMap[t[i]])) {
@@ -110,4 +110,5 @@ var isIsomorphic2 = function(s, t) {
     return true;
 }
 ```
-> !a  当a = 0 , undefined 时都会被转为true
+> !a  当a = 0 , undefined 时都会被转为true  
+字符串在js中可以直接遍历 str[i],不用转成数组
