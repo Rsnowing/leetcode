@@ -57,3 +57,40 @@ function isPowerOfFour(num: number): boolean {
     return b[0] === '1'
 };
 ```
+
+## [258. 各位相加](https://leetcode-cn.com/problems/add-digits/)
+2020-06-16
+### 思路 
+思想很直，对各数求和，大于10继续求。  
+虽然看到了题目描述中的`进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？`,但是我仍然先忽略了，因为我刷题的目的不仅仅是了解巧妙的算法，而是练习ts语法 + 保持思维 。对于初级刷题选手来说，做出来比巧妙的做更能提高信心。
+```js
+function addDigits(num: number): number {
+    let arr = numberToArr(num)
+    let sum = add(arr)
+    while (sum >= 10) {
+        sum = add(arr)
+        arr = numberToArr(sum)
+    }
+    return sum
+};
+// 数字转数字型数组
+function numberToArr(num: number):number[] {
+    return Number(num).toString().split('').map(Number)
+}
+// 数组求和
+function add(arr: number[]):number {
+    return arr.reduce((acc: number, cur:number) => {
+        acc += cur
+        return acc
+    }, 0)
+}
+```
+提交之后发现，ts的提交中只打败50%的同学，说明还有另外一个同学用ts写了，我去瞅了下，吃惊
+```js
+var addDigits = function(num: number): number {
+    return (num - 1) % 9 + 1;
+};
+```
+一番调查之后 ，发现原来题目中所求的数叫数根。   
+[如何证明一个数的数根(digital root)就是它对9的余数](https://www.zhihu.com/question/30972581/answer/50203344)   
+[关于本题更详细的解题思路](https://leetcode-cn.com/problems/add-digits/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-5-7/)
