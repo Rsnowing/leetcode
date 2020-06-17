@@ -5,7 +5,7 @@
     * [202-263-204](/number/easy)
 * [math](/math/easy)
     * [528-119-171-172-231-完](/math/easy)
-    * [191](/math/easy2)
+    * [191-258-342-326](/math/easy2)
 * [array](/array/easy)
     * [189-](/array/easy)
 * [动态规划](/动态规划/easy)

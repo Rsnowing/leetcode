@@ -94,3 +94,41 @@ var addDigits = function(num: number): number {
 一番调查之后 ，发现原来题目中所求的数叫数根。   
 [如何证明一个数的数根(digital root)就是它对9的余数](https://www.zhihu.com/question/30972581/answer/50203344)   
 [关于本题更详细的解题思路](https://leetcode-cn.com/problems/add-digits/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-5-7/)
+
+## [326. 3的幂](https://leetcode-cn.com/problems/power-of-three/)
+2020-06-17
+### 思路
+循环=> 每次* 3，注意1是3的0次方，特殊处理一下。 但是题目中又有灵魂一问`进阶：你能不使用循环或者递归来完成本题吗？`,实在是没有想到
+### code
+```js
+function isPowerOfThree(n: number): boolean {
+    if (n === 1) return true
+    for (let i = 3; i <= n; i = i * 3) {
+        if (i === n) {
+            return true
+        }
+    }
+    return false
+};
+```
+### 别人的解法
+```js
+// 将数字转成3进制，若各位加起来===1 则是3的倍数
+var isPowerOfThree = function(n) {
+    return n.toString(3).split("").reduce((prev,curr)=>parseInt(prev)+parseInt(curr))==1;
+};
+// ts写法
+function isPowerOfThree(n: number): boolean {
+    return Number(n).toString(3).split('').map(Number)
+        .reduce((acc: number, cur: number) => {
+            acc += cur
+            return acc
+        }, 0) === 1
+};
+```
+```js
+// 正则
+var isPowerOfThree = function(n) {
+    return /^10*$/.test(n.toString(3));
+};
+```
