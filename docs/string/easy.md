@@ -112,3 +112,47 @@ var isIsomorphic2 = function(s, t) {
 ```
 > !a  当a = 0 , undefined 时都会被转为true  
 字符串在js中可以直接遍历 str[i],不用转成数组
+
+## [242. 有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/)
+2020-06-18
+### 思路
+对2个字符串一顿操作，将他们按照转成数组 =》 字母排序 =》转成字符串 =》 比较字符串相等性。
+提交完成之后发现打败了25%的ts提交答案....好像是因为split操作会用到大量的临时内存【看英文版有一个伙伴说的】
+### code
+```js
+function isAnagram(s: string, t: string): boolean {
+    s = s.split('').sort().join('')
+    t= t.split('').sort().join('')
+    return s === t
+};
+```
+### 他山之玉
+思路就是新建一个map，遍历s，填充map, 结构如map: {a: 2, b:3},  
+对t，如果t中有s没有的 或者t中某元素比s中多 false
+```js
+// 别人写的 js 我练习转一下
+function isAnagram(s: string, t: string): boolean {
+    const sLen = s.length,
+        tLen = t.length
+    if (sLen !== tLen) {
+        return false
+    }
+
+    interface MapInterface {
+        [propName: string]: number;
+    }
+    let map:MapInterface = {}
+
+    for (let i = 0; i < sLen; i++) {
+        map[s[i]] ? map[s[i]]++ : map[s[i]] = 1
+    }
+    for (let j = 0; j < sLen; j++) {
+        if (map[t[j]]) {
+            map[t[j]]--
+        } else {
+            return false
+        }
+    }
+    return true
+};
+```
