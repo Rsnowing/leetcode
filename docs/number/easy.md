@@ -137,4 +137,7 @@ var countPrimes = function(n) {
 > let n = 3  
 n = n--   // n = 3  
 n-- // n =  2   
- 
+
+## [283移动0](https://leetcode-cn.com/problems/move-zeroes/)
+
+

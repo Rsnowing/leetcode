@@ -156,3 +156,79 @@ function isAnagram(s: string, t: string): boolean {
     return true
 };
 ```
+
+## [290单词规律](https://leetcode-cn.com/problems/word-pattern/)
+### 思路
+我一开始的思路如注释初，利用对象构建一个 map， 但是不好匹配，看了别人的答案，看来还是要多多使用es6新语发呀
+### code
+```js
+function wordPattern(pattern: string, str: string): boolean {
+    // let arr = str.split(' ')
+    // interface MapInterface {
+    //     [propName: string]: number;
+    // }
+    // let map:MapInterface = {}, patternMap = '', strMap = ''
+    // for (let i = 0; i < pattern.length; i++) {
+    //     if (map[pattern[i]] !== undefined) {
+    //         patternMap += map[pattern[i]]
+    //     } else {
+    //         map[pattern[i]] = i
+    //         patternMap += i
+    //     }
+    //     if (map[arr[i]] !== undefined) {
+    //         strMap += map[arr[i]]
+    //     } else {
+    //         map[arr[i]] = i
+    //         strMap += i
+    //     }
+    // }
+    // return patternMap === strMap
+    const strArr = str.split(' ')
+    if (pattern.length !== strArr.length)  return false
+    const patternMap = new Map()
+    const arrMap = new Map()
+
+    for (let i = 0; i < pattern.length; i++) {
+        const getPatternMap = patternMap.get(pattern[i])
+        const getArrMap = arrMap.get(strArr[i])
+        if (!getPatternMap) {
+            patternMap.set(pattern[i], strArr[i])
+        } else if (getPatternMap !== strArr[i]) {
+            return false
+        }
+
+        if (!getArrMap) {
+            arrMap.set(strArr[i], pattern[i])
+        } else if (getArrMap !== pattern[i]) {
+            return false
+        }
+    }
+    return true
+};
+```
+
+### 另外的思路
+利用indexOf
+```js
+var wordPattern = function(pattern, str) {
+    var arr = str.split(' ');
+    if(pattern.length!=arr.length) return false;
+    for(var i=0;i<pattern.length;i++){
+        if(pattern.indexOf(pattern[i]) != arr.indexOf(arr[i])){
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+> 将字母转为ascii码的方法：   
+var str = "A";     
+str.charCodeAt();  // 65    
+var str1 = 'a';   
+str1.charCodeAt();  // 97  
+将ascii码转为对应字母的方法：   
+var num = 97;
+String.fromCharCode(num);  // 'a'    
+var num1 = 100;    
+String.fromCharCode(num1);  // 'd'    
