@@ -132,3 +132,36 @@ var isPowerOfThree = function(n) {
     return /^10*$/.test(n.toString(3));
 };
 ```
+
+## [633. 平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers/)
+2020-06-26
+### 思路
+双层循环，虽然可以达到目的，但是总是超出时间限制。  
+正确的思路应该是：循环一次，a^2 + b^2 = c,  a = (c - b ^ 2)^ 1/2 ，如果a是整数的话就返回true
+### code
+```js
+// 超出时间限制解法
+function judgeSquareSum(c: number): boolean {
+    if (Number.isInteger(Math.sqrt(c))) return true
+    let max = Math.floor(Math.sqrt(c))
+    for (let i = 0; i <= max; i++) {
+        for (let j = max; j >= i; j--) {
+            if (Math.pow(i, 2) + Math.pow(j, 2) === c) {
+                return true
+            }
+        }
+    }
+    return false
+};
+```
+```js
+// 正解
+function judgeSquareSum(c: number): boolean {
+    for (let i = 0; i <= Math.sqrt(c); i++) {
+        if (Number.isInteger(Math.sqrt(c - Math.pow(i, 2)))) {
+            return true
+        }
+    }
+    return false
+};
+```
