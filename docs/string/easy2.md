@@ -20,6 +20,7 @@ function reverseString(s: string[]): void {
 };
 ```
 ## [686. 重复叠加字符串匹配](https://leetcode-cn.com/problems/repeated-string-match/)
+2020-06-27
 ### 思路
 刚开始被一些想法卡住了，比如叠加多少次才能判断出不匹配，如果B中有A中没有的字母要怎么去判断，一想这题没法做了，判断条件太多了。后来看了解析，有点恍然大悟，我的想法都是从反面去考虑，既然反面考虑不通，那就看看从正面出发。  
 
