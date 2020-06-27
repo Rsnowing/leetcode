@@ -2,6 +2,7 @@
 * [string](/string/easy)
     * [680-125-205-242-290](/string/easy)
     * [344-686](/string/easy2)
+    * [151](/string/middle)
 * [number](/number/easy)
     * [202-263-204](/number/easy)
 * [math](/math/easy)
