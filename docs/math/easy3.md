@@ -12,3 +12,31 @@ function maximumProduct(nums: number[]): number {
     return Math.max(res1, res2)
 };
 ```
+
+## [665. 非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/)
+2020-06-28
+### 思路 
+一开始想要用splice做，失败了，看了解答，也云里雾里/
+### code
+```js
+function checkPossibility(nums: number[]): boolean {
+    const len = nums.length
+    if (len < 3) return true
+    let count = 0
+    if (nums[0] > nums[1]) count++
+    for (let i = 1; i < len - 1; i++) {
+        let left = nums[i - 1]
+        let right = nums[i + 1]
+        if (nums[i] > nums[i + 1]) {
+            count++
+            if (count > 1) return false
+            if (left > right) {
+                nums[i + 1] = nums[i]
+            } else {
+                nums[i] = right
+            }
+        }
+    }
+    return true
+};
+```
