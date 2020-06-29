@@ -40,3 +40,33 @@ function checkPossibility(nums: number[]): boolean {
     return true
 };
 ```
+
+## [169. 多数元素](https://leetcode-cn.com/problems/majority-element/)
+### code
+```js
+// 因为多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。所以 n/2 处的元素一定是多数元素
+function majorityElement(nums: number[]): number {
+    nums.sort((a, b) => a -b)
+    return nums[Math.floor(nums.length / 2)]
+};
+```
+解法2
+```js
+// 统计每个元素出现的次数，当次数>n/2时返回
+function majorityElement(nums:number[]): number {
+  let half = Math.floor(nums.length / 2);
+  let map = new Map();
+  for (let item of nums) {
+    if (map.has(item)) {
+      let num = map.get(item);
+      map.set(item, num + 1);
+      if (num + 1 > half) {
+        return item;
+      }
+    } else {
+      map.set(item, 1);
+    }
+  }
+  return nums[0];
+}
+```

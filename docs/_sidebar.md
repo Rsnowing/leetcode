@@ -8,7 +8,7 @@
 * [math](/math/easy)
     * [528-119-171-172-231-完](/math/easy)
     * [191-258-342-326-633-完](/math/easy2)
-    * [628](/math/easy3)
+    * [628-665-169](/math/easy3)
 * [array](/array/easy)
     * [189-645-674](/array/easy)
 * [动态规划](/动态规划/easy)
