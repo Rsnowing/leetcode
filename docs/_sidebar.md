@@ -4,7 +4,7 @@
     * [344-686](/string/easy2)
     * [151](/string/middle)
 * [number](/number/easy)
-    * [202-263-204](/number/easy)
+    * [202-263-204-167](/number/easy)
 * [math](/math/easy)
     * [528-119-171-172-231-完](/math/easy)
     * [191-258-342-326-633-完](/math/easy2)

@@ -141,3 +141,34 @@ n-- // n =  2
 ## [283移动0](https://leetcode-cn.com/problems/move-zeroes/)
 
 
+## [167. 两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/)
+### 思路
+第一想法！API工程师简直手到擒来。！！but API工程师翻车的一次！！超出时间限制
+```js
+function twoSum(numbers, target) {
+    for(let i = 0; i < numbers.length; i++) {
+        const res = target - numbers[i]
+        const index = numbers.lastIndexOf(res)
+        if (index !== -1 ) {
+            return [Math.min(i + 1, index + 1), Math.max(i + 1, index + 1)]
+        }
+    }
+};
+```
+经评论区提醒，这是一个典型的双指针碰撞案例，然后自己写了下
+```js
+function twoSum(numbers: number[], target: number): number[] {
+    let left = 0, right = numbers.length - 1
+    while (left < right) {
+        const res = numbers[left] + numbers[right]
+        if (res > target) {
+            right--
+        } else if (res === target) {
+            return [left + 1, right + 1]
+        } else {
+            left++
+        }
+    }
+    return [0, 0]
+};
+```
