@@ -59,6 +59,7 @@ function findErrorNums(nums: number[]): number[] {
 > 注意： indexOf不存在 返回-1！！！ 不要老是想着写非操作
 
 ## [217. 存在重复元素](https://leetcode-cn.com/problems/contains-duplicate/)
+2020-07-05
 ### 思路
 1. Map
 2. indexOf [特慢！打败7.1%]
