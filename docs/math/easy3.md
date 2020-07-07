@@ -70,3 +70,32 @@ function majorityElement(nums:number[]): number {
   return nums[0];
 }
 ```
+
+### [441. 排列硬币](https://leetcode-cn.com/problems/arranging-coins/)
+2020-07-07
+### 思路
+刷的是二分法的集训，可是这个题明显可以不用二分法做。本来想通过等差数列去做，奈何想不出怎么写，差不多是求和吧，挺low的
+### code
+```js
+function arrangeCoins(n: number): number {
+    let sum = 0, count = 0
+    for (let i = 1; i <= n; i++) {
+        if (sum + i <= n) {
+            sum = sum + i
+            count++
+        } else {
+            return count
+        }
+    }
+    return count
+};
+```
+```js
+// 数学解法
+m = (n * (n + 1)) / 2
+n^2 + n = 2 * m
+(n + 1/2) ^2 = 2 * m + 1/4
+n = sqrt(2 * m + 1/4) - 1/2
+// 代码 
+return parseInt(Math.sqrt(2 * n + 1 / 4) - 1 / 2 + '')
+```
