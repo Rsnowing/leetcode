@@ -99,3 +99,15 @@ n = sqrt(2 * m + 1/4) - 1/2
 // 代码 
 return parseInt(Math.sqrt(2 * n + 1 / 4) - 1 / 2 + '')
 ```
+
+### [292. Nim 游戏](https://leetcode-cn.com/problems/nim-game/)
+2020-07-14
+#### 思路
+看完题目之后，思路就有了，能被4整除的情况下，我肯定赢不了。     
+刚开始我还想了当小于4的时候我肯定能赢，要写在代码外，太蠢了
+```js
+function canWinNim(n: number): boolean {
+    // return n < 4 ? true : n % 4 !== 0  愚蠢！！！
+    return  n % 4 !== 0
+};
+```
