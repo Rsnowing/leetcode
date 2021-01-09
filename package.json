@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "leetcode",
   "scripts": {
-    "dev": "docsify serve ../docs --open",
-    "summary": "node ./summary.js"
+    "dev": "docsify serve ./docs --open",
+    "summary": "node ./docs/summary.js"
   },
   "keywords": [
     "leetcode"

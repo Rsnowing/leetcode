@@ -2,11 +2,11 @@ const fs = require('fs');
 const path = require('path')
 // console.log(__dirname);
 // console.log(path.resolve('../../'));
-console.log(process.cwd());
 
-const CUR_PATH = path.join(process.cwd(), '.')
-const EXCLUDE = /assets|.git/ // 不想生成目录的文件夹名称
+const CUR_PATH = path.join(process.cwd(), './docs')
+const EXCLUDE = /assets|code|test|.git/ // 不想生成目录的文件夹名称
 
+console.log(CUR_PATH);
 let summary = {} // 目录
 
 getDir(CUR_PATH)
