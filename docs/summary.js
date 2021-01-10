@@ -50,7 +50,7 @@ function getFile(curpath, data) {
       const fileName = path.basename(file, extension); // 获取没有后缀的文件名
       
       // 转换路径格式 ** path.relative
-      let formateRoute = path.relative(process.cwd(), fpath)
+      let formateRoute = path.relative(path.join(process.cwd(), './docs'), fpath)
       formateRoute = formateRoute.replace(/\\/g, '/')
       data.push({ path: formateRoute, name: fileName })
     }
